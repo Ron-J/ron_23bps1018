@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .user-info {
+            font-size: 16px;
+            font-weight: normal;
+        }
+
+        .logout-btn {
+            background: none;
+            border: 1px solid white;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .logout-btn:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .content {
+            margin: 20px auto;
+            max-width: 600px;
+            font-size: 18px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .links {
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 15px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            margin: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s;
+        }
+
+        button:last-child {
+            background-color: #dc3545;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+
+        button:first-child:hover {
+            background-color: #218838;
+        }
+
+        button:last-child:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <span>RN Hospital Reviews</span>
+        <div class="user-info">
+            Welcome, {{ username }}!
+            <button class="logout-btn" onclick="location.href='/logout'">Logout</button>
+        </div>
+    </header>
+
+    <div class="content">
+        Welcome To Our Website. Looking for the best place to go for your toothache, health checkup
+        or any other treatment? Find the best options for you here!  
+        Want to share your experience with healthcare providers? You can here!
+    </div>
+
+    <div class="links">
+        <button onclick="location.href='/search'">Find the best hospitals</button>
+        <button onclick="location.href='/review'">Share your experiences</button>
+        <button onclick="location.href='/delete'">Delete a Hospital that has been closed</button>
+    </div>
+</body>
+</html>
