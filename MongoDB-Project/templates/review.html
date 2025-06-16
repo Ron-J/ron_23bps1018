@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Reviews</title>
+
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #007bff;
+            padding: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        /* Form Container */
+        form {
+            background: white;
+            width: 50%;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        /* Input Labels */
+        label {
+            display: block;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        /* Input Fields & Dropdowns */
+        input, select {
+            width: 80%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        /* Header */
+        h1 {
+            color: #333;
+            margin-top: 20px;
+        }
+
+        /* Submit Button */
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="/home">Home</a>
+    </nav>
+
+    <h1>Share Your Experience With Health Centers</h1>
+
+    <form action="{{ url_for('review') }}" method="post">
+        
+        <label for="name">Name of Center</label>
+        <input type="text" name="name" required>
+
+        <label for="location">Location</label>
+        <input type="text" name="location" required>
+
+        <label for="TypeP">Choose the Type of Procedure</label>
+        <select name="TypeP" required>
+            <option value="1">Medicinal</option>
+            <option value="4">Surgery 1</option>
+            <option value="5">Surgery 2</option>
+            <option value="6">Surgery 3</option>
+            <option value="7">Surgery 4</option>
+            <option value="5">Mix</option>
+        </select>
+
+        <label for="TypeC">Choose the Type of Condition</label>
+        <select name="TypeC" required>
+            <option value="3">Lower Body</option>
+            <option value="4">Upper Body</option>
+            <option value="6">Heart</option>
+            <option value="5">Throat</option>
+            <option value="7">Head</option>
+        </select>
+
+        <label for="time">Time Taken (Diagnosis to Treatment)</label>
+        <input type="number" name="time" required min="0">
+
+        <label for="sideeffects">Number of Side-Effects</label>
+        <input type="number" name="sideeffects" required min="0">
+
+        <button type="submit">Submit Review</button>
+
+    </form>
+
+</body>
+</html>
